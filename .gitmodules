@@ -1,0 +1,3 @@
+[submodule "loopxia-engine"]
+	path = loopxia-engine
+	url = git@github.com:lttlflla/loopxia-engine.git
