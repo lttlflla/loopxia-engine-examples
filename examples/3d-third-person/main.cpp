@@ -47,7 +47,7 @@ int main()
     auto avatar = CreateAvatar();
     avatar->SetMesh(g_pCharacterMesh);
 
-    auto cameraInitialPosition = Vector3(0, 5, 2);
+    auto cameraInitialPosition = Vector3(0, 10, 0.5f);
     g_camera = CreateCamera(cameraInitialPosition, 75.0f /* fov */, 1.33 /* aspect ratio */, 0.1f /* near clip */, 100.0f /* far clip */);
 
     auto cameraController = CreateCameraController();
@@ -59,7 +59,7 @@ int main()
     //sceneRoot->AttachObject(g_camera);
     //sceneRoot->AttachObject(avatar);
     avatar->SetParent(sceneRoot);
-
+    
     scene->SetActiveCamera(g_camera);
 
     auto lookDir = Vector3(0, 0, 0) - cameraInitialPosition;
@@ -74,7 +74,7 @@ int main()
         displacementElapsed += time.ElapsedTimeMilliseconds(); 
         auto sinDis = ((float)displacementElapsed / 1000.0f);
         //LogInfo(std::format("elapsed time {} {} {}", time.ElapsedTimeMilliseconds(), displacementElapsed, sinDis));
-        auto camDisplacement = camMoveDir * 10.0f * sin(sinDis);
+        auto camDisplacement = camMoveDir * 3.0f * sin(sinDis);
         g_camera->SetPosition(cameraInitialPosition + camDisplacement);
 
         return true;

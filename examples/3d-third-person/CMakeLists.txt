@@ -43,7 +43,7 @@ project ("third_person")
 set(LOOPXIA_INCLUDE_DIRS "include/loopxia")
 
 # Add source to this project's executable.
-add_executable (third_person main.cpp "main_base.h")
+add_executable (third_person main.cpp )
 
 copy_engine_assets_dev(third_person "${CMAKE_CURRENT_BINARY_DIR}")
 
